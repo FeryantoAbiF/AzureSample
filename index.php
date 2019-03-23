@@ -62,6 +62,7 @@
         <input type="submit" name="submit" value="Submit" />
         <input type="submit" name="load_data" value="Load Data" />
     </form>
+
     <?php
     $host = "ferywebserver";
     $user = "Fery";
@@ -69,7 +70,7 @@
     $db = "webdatabase";
 
     try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn = new PDO($host, $db, $user, $pass);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (Exception $e) {
         echo "Failed: " . $e;
@@ -81,7 +82,7 @@
             $alamat = $_POST['alamat'];
             $kota = $_POST['kota'];
             // Insert data
-            $sql_insert = "INSERT INTO registrasi (name, alamat, kota) 
+            $sql_insert = "INSERT INTO registrasi (nama, alamat, kota) 
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
