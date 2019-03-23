@@ -78,7 +78,7 @@
 
     if (isset($_POST['submit'])) {
         try {
-            $name = $_POST['name'];
+            $name = $_POST['nama'];
             $alamat = $_POST['alamat'];
             $kota = $_POST['kota'];
             // Insert data
