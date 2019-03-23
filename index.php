@@ -26,7 +26,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "ferywebserver";
+    $host = "ferywebserver.database.windows.net";
     $user = "Fery";
     $pass = "1234Qwer";
     $db = "webdatabase";
